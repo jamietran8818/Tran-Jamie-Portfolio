@@ -1,0 +1,110 @@
+---
+title: "DSC520_Week11"
+author: "Jamie Tran"
+date: "2023-11-10"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Download data:
+
+```{r}
+binary_data <- read.csv(file = "binary-classifier-data.csv")
+head(binary_data)
+trinary_data <- read.csv(file = "trinary-classifier-data.csv")
+head(trinary_data)
+```
+
+## Plot the data from each dataset using a scatter plot.
+
+```{r}
+plot(y ~ x, data = binary_data)
+plot(y ~ x, data = trinary_data)
+```
+
+## In this problem, you will determine which points are nearest by calculating the Euclidean distance between two points.
+
+```{r}
+binary <- c(70.88469, 83.17702)
+trinary <- c(30.08387, 39.63094)
+euclidean <- function(a,b) sqrt(sum(a-b)^2)
+euclidean(binary, trinary)
+```
+
+## Fit a k nearest neighbors’ model for each dataset for k=3, k=5, k=10, k=15, k=20, and k=25. Compute the accuracy of the resulting models for each value of k. 
+
+
+```{r}
+diff(binary_data$x, differences = 3)
+diff(binary_data$x, differences = 5)
+diff(binary_data$x, differences = 10)
+diff(binary_data$x, differences = 15)
+diff(binary_data$x, differences = 20)
+diff(binary_data$x, differences = 25)
+diff(binary_data$x, lag = 3)
+diff(binary_data$x, lag = 5)
+diff(binary_data$x, lag = 10)
+diff(binary_data$x, lag = 15)
+diff(binary_data$x, lag = 20)
+diff(binary_data$x, lag = 25)
+```
+
+## Plot the results in a graph where the x-axis is the different values of k and the y-axis is the accuracy of the model.
+
+```{r}
+#install.packages('forecast')
+library(forecast)
+ndiffs(x = binary_data$y)
+plot(diff(binary_data$y, 1))
+```
+
+## Looking back at the plots of the data, do you think a linear classifier would work well on these datasets?
+
+Looking at the following plot I do think a linear classifier would work great with this set of data! At 0 a clear divider could be placed. 
+
+## Download clustering data:
+
+```{r}
+clustering_data <- read.csv(file = "clustering-data.csv")
+head(clustering_data)
+```
+
+## Plot the dataset using a scatter plot.
+
+```{r}
+plot(y ~ x, data = clustering_data)
+```
+
+## Fit the dataset using the k-means algorithm from k=2 to k=12. 
+
+```{r}
+clusterK2 <- kmeans(x=clustering_data, centers = 10)
+clusterK2
+```
+
+## Create a scatter plot of the resultant clusters for each value of k.
+
+```{r}
+library(useful)
+plot(clusterK2, data = clustering_data)
+```
+
+## Instead, you will use the average distance from the center of each cluster as a measure of how well the model fits the data. To calculate this metric, simply compute the distance of each data point to the center of the cluster it is assigned to and take the average value of all of those distances.
+
+```{r}
+cluster_best <- FitKMeans(clustering_data, max.clusters = 12, nstart = 25, seed = 278613)
+cluster_best
+```
+
+## Calculate this average distance from the center of each cluster for each value of k and plot it as a line chart where k is the x-axis and the average distance is the y-axis.
+
+```{r}
+PlotHartigan(cluster_best)
+```
+
+## One way of determining the “right” number of clusters is to look at the graph of k versus average distance and finding the “elbow point”. Looking at the graph you generated in the previous example, what is the elbow point for this dataset?
+
+Based on the graph above I would say the elbow point is perfect at 6 clusters. 
