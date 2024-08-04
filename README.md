@@ -43,12 +43,12 @@ In this project logistic regression is performed on heart disease data to catego
 https://github.com/jamietran8818/Tran-Jamie-Portfolio/tree/main/Logistic-Regression-Model
 
 # Project Nine: Time Series/Forecasting Model
-In this project I am using a year of sales data from a pizza parlor to build a forecast for the following year. 
+In this project I am using a year of sales data from a pizza parlor to build a forecast for the following year using a SARIMAX model. 
 
 https://github.com/jamietran8818/Tran-Jamie-Portfolio/tree/main/Time-Series-Analysis
 
-# Project Ten: DSC680 Project 3 
-This project uses linear regression to predict the outlook of Google, Apple, and Tesla stocks to help build sentiment analysis. 
+# Project Ten: Ridge Regression 
+This project uses ridge regression to predict the outlook of Google, Apple, and Tesla stocks to help build sentiment analysis. 
 
 https://github.com/jamietran8818/Tran-Jamie-Portfolio/tree/main/Ridge-Regression
 
