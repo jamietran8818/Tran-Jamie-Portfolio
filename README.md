@@ -48,4 +48,4 @@ In this project I am using a year of sales data from a pizza parlor to build a f
 https://github.com/jamietran8818/Tran-Jamie-Portfolio/tree/main/Time-Series-Analysis
 
 # Project Ten: DSC680 Project 3 
-This is reserved for my last project in DSC 680. 
+This project uses linear regression to predict the outlook of Google, Apple, and Tesla stocks to help build sentiment analysis. 
