@@ -49,3 +49,6 @@ https://github.com/jamietran8818/Tran-Jamie-Portfolio/tree/main/Time-Series-Anal
 
 # Project Ten: DSC680 Project 3 
 This project uses linear regression to predict the outlook of Google, Apple, and Tesla stocks to help build sentiment analysis. 
+
+https://github.com/jamietran8818/Tran-Jamie-Portfolio/tree/main/Ridge-Regression
+
