@@ -1,0 +1,48 @@
+---
+title: "TranDSC640Week5&6"
+author: "Jamie Tran"
+date: "2024-04-17"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Downloading and previewing data set:
+
+```{r}
+unemployed <- read.csv(file = 'unemployement-rate-1948-2010.csv')
+head(unemployed)
+```
+
+## Rstudio tree map using treemap:
+
+
+```{r}
+library(treemap)
+treemap(unemployed, index = 'Year', vSize = 'Value', title = 'Unemployment Percentage by Year')
+```
+
+## Rstudio area map using ggplot:
+
+```{r}
+library(ggplot2)
+ggplot(data = unemployed, 
+       aes(x = Year, 
+           y = Value)) +
+    geom_area(aes(colour = Value, fill = Value)) +
+    labs(title = 'Unemployment Over the Years')
+```
+
+## Rstudio stacked area map using ggplot:
+
+```{r}
+ggplot(data = unemployed, 
+       aes(x = Year, 
+           y = Value,
+           fill = Period)) +
+    geom_area(aes(colour = Period, fill = Period)) +
+    labs(title = 'Unemployment Over the Years')
+```
+
