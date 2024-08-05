@@ -1,24 +1,27 @@
 # Logistic Regression:
-This program utilizes a logistic regression model to predict stock prices. 
+This program utilizes a logistic regression model to evaluate the relationship between the diagnosis of heart disease and various paitents health characteristics. 
 
 ## Installation:
 -Using Python in Jupyter Notebook import the following libraries:
 
-import pandas as pd
-import numpy as np 
-import warnings 
-import matplotlib.pyplot as plt 
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import Ridge
-from sklearn.metrics import mean_squared_error, r2_score
+      import pandas as pd
+      import numpy as np
+      import warnings 
+      import matplotlib.pyplot as plt
+      from sklearn.linear_model import LogisticRegression
+      from sklearn.model_selection import train_test_split
+      from sklearn.metrics import classification_report, confusion_matrix
 
 ## Loading Data:
--Import the Google, Apple, and Tesla datasets provided using pandas. 
+-Import the heart disease prediction csv file provided using pandas. 
 
 -To confirm they have loaded successfully use the head function to preview each dataset.
 
 -Using isna().sum() check for missing values in the following datasets.
+
+-Drop irrelevant columns and filter 'Heart Disease' column to only include those with heart disease present.
+
+-Lastly convert qualitative data to integers.
 
 
 ## Code:
@@ -26,32 +29,18 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 -Utilize tran_test_split to split x and y into training and test sets.
 
--Fit and Scale the data using Standard Scaler and apply ridge regression.
+-Fit and apply logistic regression.
 
-## Example:
+### Example:
 
-#fitting and scaling data
-scaler = StandardScaler()
-x_train_scaled = scaler.fit_transform(x_train)
-x_test_scaled = scaler.transform(x_test)
-#creating ridge model
-ridge_reg = Ridge(alpha=1.0)
-ridge_reg.fit(x_train_scaled, y_train)
+      #assigning the model to a variable 
+      log_regression = LogisticRegression(max_iter = 1000)
+      #fitting the training data to the model
+      log_regression.fit(x_train, y_train)
+      
+-Create predictions for the x test set. 
 
--Create predictions for the y datasets and find your Mean Squared Error and R squared scores. 
-
--Plot linear regression graph using matplotlib
-
-## Example:
-
-#plotting linear regression graph 
-plt.figure(figsize=(10, 6))
-plt.scatter(y_test, y_pred_test, color='blue', label='Predicted vs Actual Values')
-plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red', label='Ideal fit')
-plt.xlabel('Actual Values')
-plt.ylabel('Predicted Values')
-plt.title('Google Stock Predicted vs Actual Closing Prices')
-plt.legend()
+-Print and evaluate classification report and confusion matrix. 
 plt.show()
 
 -Repeat using the Apple and Tesla datasets. 
