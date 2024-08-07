@@ -32,10 +32,10 @@ In this project I created 3 different visualizations from a data set using R.
 
 https://github.com/jamietran8818/Tran-Jamie-Portfolio/tree/main/Rstudio-Visualizations
 
-# Project Seven: Hadoop-Hive-Spark-Hbase
-This section contains screenshots of my work in the terminal utilizing google cloud and exploring these different databases.
+# Project Seven: HDFS, Yarn, Hive, HBase, Spark, Kafka, Solr, NiFi
+This section contains screenshots of my work in the terminal utilizing google cloud and exploring these different big data databases.
 
-https://github.com/jamietran8818/Tran-Jamie-Portfolio/tree/main/Hadoop-Hive-Spark-Hbase
+https://github.com/jamietran8818/Tran-Jamie-Portfolio/tree/main/HDFS-YARN-Hive-HBase-Spark-Kafka-Solr-NiFi
 
 # Project Eight: Logistic Regression Model
 In this project logistic regression is performed on heart disease data to categorize characteristics of heart disease amongst paitents. 
