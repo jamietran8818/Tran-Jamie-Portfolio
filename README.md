@@ -50,6 +50,8 @@ https://github.com/jamietran8818/Tran-Jamie-Portfolio/tree/main/Time-Series-Anal
 # Project Ten: Ridge Regression 
 This project uses ridge regression to predict the outlook of Google, Apple, and Tesla stocks to help build sentiment analysis. 
 
+https://github.com/jamietran8818/Tran-Jamie-Portfolio/tree/main/Ridge-Regression
+
 # Project Eleven: Forecasting in Excel
 This project forecasts the closing price of SPY utilizing three different methods. These include forecast sheets, moving average, and trend lines.
 
